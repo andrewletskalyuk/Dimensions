@@ -1,11 +1,67 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet,
+  // SafeAreaView,
+  // Dimensions,
+  // StatusBar,
+  // Platform,
+  View
+} from 'react-native';
+import {
+  //useDimensions, //
+  useDeviceOrientation //
+} from '@react-native-community/hooks';
 
 export default function App() {
+  const { landscape } = useDeviceOrientation();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    // <SafeAreaView style={styles.container}>
+    //   <View style={{
+    //     backgroundColor: 'dodgerblue',
+    //     width: '100%',
+    //     height: landscape ? '100%' : '30%',
+    //   }}
+    //   ></View>
+    // </SafeAreaView>
+    <View
+      style={{
+        backgroundColor: '#fff',
+        flex: 1,
+        flexDirection: 'row', //це головний елемент форматування
+        justifyContent: 'center', //це другий за значимостю доступ
+        alignItems: 'center',
+        //flexDirection: 'row-reverse'
+        //flexDirection: 'column-reverse',
+        alignContent: 'center', //пр
+        flexWrap: 'wrap', //перенос контейнера якщо він не влазить в один радок
+      }}
+    >
+      <View style={{
+        backgroundColor: 'dodgerblue',
+        // flex: 2,
+        height: 100,
+        width: 100,
+        //alignSelf: 'flex-start'
+        // flexBasis: 100, // width or height
+        // flexGrow: 1,
+      }}
+      />
+      <View style={{
+        backgroundColor: 'gold',
+        //flex: 1
+        width: 100,
+        height: 100,
+        // top: 20,
+        // left: 20,
+        // position: 'relative'
+      }}
+      />
+      <View style={{
+        backgroundColor: 'tomato',
+        //flex: 1
+        width: 100,
+        height: 100
+      }}
+      />
     </View>
   );
 }
@@ -14,7 +70,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
