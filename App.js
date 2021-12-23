@@ -4,7 +4,8 @@ import {
   // Dimensions,
   // StatusBar,
   // Platform,
-  View
+  View,
+  Text,
 } from 'react-native';
 import {
   //useDimensions, //
@@ -13,8 +14,10 @@ import {
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 
+import AppText from './app/components/AppText';
+
 export default function App() {
-  const { landscape } = useDeviceOrientation();
+  const { landscape } = useDeviceOrientation(); //
   return (
     // <SafeAreaView style={styles.container}>
     //   <View style={{
@@ -66,15 +69,58 @@ export default function App() {
     //   />
     // </View>
     //<WelcomeScreen/>
-    <ViewImageScreen />
+    //<ViewImageScreen />
+    //Borders 2
+    <View style={styles.container}>
+      {/* <View style={{
+        backgroundColor: "dodgerblue",
+        width: 100,
+        height: 100,
+        // borderWidth: 10,
+        // borderColor: 'royalblue',
+        // borderRadius: 50,
+        // borderTopWidth: 20,
+        // borderTopLeftRadius: 50
+        //android!!! border
+        //elevation: 20, //немає властивостей таких гнучних як в iOS
+        padding: 20,
+        paddingHorizontal: 10,
+        paddingLeft: 30,
+      }}>
+        <View style={{
+          backgroundColor: "gold",
+          width: 50,
+          height: 50,
+        }}></View>
+      </View>
+      <View style={{
+        backgroundColor: 'tomato',
+        width: 100,
+        height: 100,
+        margin: 20,
+      }}>
+
+      </View> */}
+      <Text style={{
+        //fontFamily: "Roboto",
+        fontSize: 30,
+        fontWeight: "600",
+        color: "tomato",
+        textTransform: "capitalize",
+        textAlign: "center",
+        lineHeight: 30,
+      }}>
+        I love React native! This is my React native program
+      </Text>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    //backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
